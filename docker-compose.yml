@@ -1,0 +1,29 @@
+version: '2'
+services:
+  imports_data:
+    image: cogniteev/echo
+    volumes:
+      - /data
+
+  imports_db:
+    image: redis:3.0
+    volumes_from:
+      - imports_data
+    restart: unless-stopped
+
+  imports:
+    build: ./build/imports
+    env_file: ./build/imports/.env
+    volumes:
+      - ./build/imports/app:/server/app
+    links:
+      - imports_db
+    restart: unless-stopped
+
+  nginx:
+    build: ./build/nginx
+    links:
+      - imports
+    ports:
+      - "80:80"
+    restart: unless-stopped

@@ -1,0 +1,6 @@
+.env
+ssl/
+node_modules
+npm-debug.log
+dev-config.json
+script

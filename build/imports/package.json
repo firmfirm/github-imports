@@ -1,0 +1,20 @@
+{
+  "name": "zamok-imports",
+  "version": "0.1.0",
+  "repository": "https://github.com/firmfirm/github-imports",
+  "description": "HTML imports proxy server",
+  "main": "app/index.js",
+  "scripts": {
+    "start": "nodemon app/index.js"
+  },
+  "author": "martynas@firmfirm.co",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "redis": "^2.6.2",
+    "github": "^5.2.1",
+    "mime-types": "^2.1.12",
+    "bluebird": "^3.4.6"
+  }
+}
